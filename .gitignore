@@ -1,0 +1,31 @@
+# Ignore everything by default
+*
+
+# Include config directories
+!CLAUDE.md
+!rules/
+!rules/**
+!hooks/
+!hooks/**
+!skills/
+!skills/**
+!agents/
+!agents/**
+!commands/
+!commands/**
+
+# Exclude runtime/generated files from hooks
+hooks/*.log
+hooks/debug.log
+hooks/todo-enforcer.config.json
+
+# Exclude local settings (contains machine-specific permissions)
+settings.local.json
+
+# Include hook wiring
+!settings.json
+
+# Include this gitignore and readme
+!.gitignore
+!README.md
+!INSTALL.md
