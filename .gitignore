@@ -5,6 +5,7 @@
 !CLAUDE.md
 !rules/
 !rules/**
+rules/*.local.md
 !hooks/
 !hooks/**
 !skills/
@@ -32,3 +33,6 @@ settings.local.json
 !.gitignore
 !README.md
 !INSTALL.md
+
+# Local-only files (not shared with team)
+*.local.md

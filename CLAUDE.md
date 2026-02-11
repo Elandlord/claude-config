@@ -22,6 +22,7 @@ Your code should be indistinguishable from a senior staff engineer's.
 - Add comments only where logic isn't self-evident
 
 ### PHP (PSR-2 + PHP CS Fixer)
+- `<?php` followed immediately by `declare(strict_types=1);` on the next line — no blank line between them
 - Use short array syntax `[]` not `array()`
 - One space around concatenation operator `.`
 - Ordered imports alphabetically
@@ -30,7 +31,8 @@ Your code should be indistinguishable from a senior staff engineer's.
 - Always use braces on `new` statements
 - No trailing comma in single-line arrays
 - No blank line at end of file
-- Use `declare(strict_types=1);` right under `<?php`
+- Use constants logically: when a value is used more than once in a file, or when it semantically represents a constant
+- Avoid `private` visibility — prefer `protected` or `public` for inheritance in a modular codebase. Only use `private` when strictly necessary
 
 ### JavaScript / TypeScript (Prettier)
 - Single quotes
@@ -154,7 +156,7 @@ Add this docblock above the class (under imports):
 ```
 
 ### Properties
-- Define mocked dependencies as protected properties with type `ClassName|MockInterface`
+- Define mocked dependencies as protected properties with intersection type `ClassName&MockInterface`
 - Define all magic numbers and strings as class constants
 
 ### Setup
@@ -170,7 +172,6 @@ Add this docblock above the class (under imports):
 ### Example
 ```php
 <?php
-
 declare(strict_types=1);
 
 namespace Tests\Unit;
@@ -191,8 +192,8 @@ class PaymentServiceTest extends MockeryTestCase
     private const AMOUNT = 99.99;
     private const CURRENCY = 'EUR';
 
-    protected OrderRepository|MockInterface $orderRepository;
-    protected PaymentService|MockInterface $paymentService;
+    protected OrderRepository&MockInterface $orderRepository;
+    protected PaymentService&MockInterface $paymentService;
 
     protected function setUp(): void
     {
