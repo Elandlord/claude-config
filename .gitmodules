@@ -1,0 +1,9 @@
+[submodule "skills/humanizer"]
+	path = skills/humanizer
+	url = https://github.com/blader/humanizer.git
+[submodule "skills/visual-explainer"]
+	path = skills/visual-explainer
+	url = https://github.com/nicobailon/visual-explainer.git
+[submodule "skills/anthropic-skills"]
+	path = skills/anthropic-skills
+	url = https://github.com/anthropics/skills.git
