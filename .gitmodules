@@ -10,3 +10,6 @@
 [submodule "skills/superpowers"]
 	path = skills/superpowers
 	url = https://github.com/obra/superpowers.git
+[submodule "skills/awesome-subagents"]
+	path = skills/awesome-subagents
+	url = https://github.com/VoltAgent/awesome-claude-code-subagents.git
