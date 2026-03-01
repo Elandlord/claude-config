@@ -13,3 +13,6 @@
 [submodule "skills/awesome-subagents"]
 	path = skills/awesome-subagents
 	url = https://github.com/VoltAgent/awesome-claude-code-subagents.git
+[submodule "skills/skill-prompt-generator"]
+	path = skills/skill-prompt-generator
+	url = https://github.com/huangserva/skill-prompt-generator.git
