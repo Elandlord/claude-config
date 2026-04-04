@@ -1,16 +1,5 @@
 {
   "hooks": {
-    "PreCompact": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/pre-compact.sh"
-          }
-        ]
-      }
-    ],
     "SessionStart": [
       {
         "matcher": "",
@@ -18,37 +7,6 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/session-start.sh"
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/session-end.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/evaluate-session.sh"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/todo-enforcer.sh"
           }
         ]
       }
@@ -103,6 +61,76 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/todo-enforcer.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.claude/sounds/stop.mp3 &"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/pre-compact.sh"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/session-end.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/evaluate-session.sh"
+          }
+        ]
+      }
     ]
-  }
+  },
+  "enabledPlugins": {
+    "prompt-caching@ercan-ermis": true,
+    "skill-codex@skill-codex": true
+  },
+  "extraKnownMarketplaces": {
+    "ercan-ermis": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/flightlesstux/prompt-caching.git"
+      }
+    },
+    "skill-codex": {
+      "source": {
+        "source": "github",
+        "repo": "skills-directory/skill-codex"
+      }
+    }
+  },
+  "voiceEnabled": true
 }
