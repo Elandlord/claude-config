@@ -649,10 +649,23 @@ If the user's approach seems problematic:
 ### Docker / Infrastructure Debugging
 - When debugging Docker or auth issues, check for stale/expired OAuth tokens and credential syncing problems first before investigating other causes
 - Common root cause: expired refresh tokens baked into images or environment
+- When debugging Docker build issues, check for symlink problems, actual error messages, and file system state before suggesting cache-related fixes
+- If a fix doesn't work, step back and re-examine assumptions rather than trying variations of the same approach
+
+### Domain Model Understanding
+- When the user describes a data structure or domain model (e.g., "multiple jobs per order item", "ICD:identifier format"), take it at face value
+- Do not assume a simpler model — ask clarifying questions rather than guessing wrong
+- This applies to any domain-specific terminology, data relationships, or business rules
+
+### Scope Management
+- Before making changes, confirm scope with the user when the request is ambiguous
+- Keep changes focused on what was requested
+- Do not expand scope (e.g., adding resource gathering systems when only fullscreen mode was asked for) unless the user explicitly approves
 
 ### UI Implementation
 - When the user describes a specific UI pattern (e.g., "persistent sidebar panel"), implement exactly that
 - Never substitute a different UX pattern (e.g., hover flyout instead of persistent panel) without asking first
+
 </Domain_Rules>
 
 <Constraints>
